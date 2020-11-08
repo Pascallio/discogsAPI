@@ -12,7 +12,7 @@ get_community_release_rating(
 \arguments{
 \item{release_id}{Integer value representing a valid release ID}
 
-\item{token}{(optional) Token object obtained from authorize()}
+\item{token}{(optional) Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Get the rating statistics by the community

@@ -27,11 +27,13 @@ edit_field_instance(
 
 \item{field_id}{The ID of the field}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Edit fields of an instance
 }
-\details{
-
+\examples{
+token <- authorize("key", "secret")
+edit_field_instance(username = "username", value = "my_value", folder_id = 0,
+                   release_id = 1000, instance_id = 1, field_id = 1, token = token)
 }

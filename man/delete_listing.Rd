@@ -13,7 +13,7 @@ delete_listing(
 \arguments{
 \item{listing_id}{The ID of the listing you are fetching}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 
 \item{options}{(optional) Parameters, see Details}
 }

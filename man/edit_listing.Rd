@@ -25,7 +25,7 @@ post_listing(
 
 \item{status}{The status of the listing. See Details}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 
 \item{options}{(optional) Parameters, see Details}
 }

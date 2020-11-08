@@ -13,7 +13,7 @@ get_user_lists(
 \arguments{
 \item{username}{String containing a valid username}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{(optional) Token object obtained from authorize() or a string containing your personal access token}
 
 \item{options}{(optional) List of named parameters, see Details}
 }
@@ -21,5 +21,14 @@ get_user_lists(
 Get a user's lists
 }
 \details{
-
+Returns a User’s Lists. Private Lists will only display when authenticated as the owner. Accepts Pagination parameters.
+\subsection{Pagination options;}{
+\itemize{
+\item \strong{page:} integer, the page you want to request; \strong{example}: 1
+\item \strong{per_page:} integer, the number of items per page; \strong{example}: 50
+}
+}
+}
+\examples{
+user_list <- get_user_lists("username")
 }

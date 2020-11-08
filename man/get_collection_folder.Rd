@@ -15,7 +15,7 @@ get_collection_folder(
 
 \item{folder_id}{Valid identifier for a folder}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{(optional) Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Retrieve metadata about a folder in a user’s collection.
@@ -24,5 +24,6 @@ Retrieve metadata about a folder in a user’s collection.
 If folder_id is not 0, authentication as the collection owner is required.
 }
 \examples{
-#'token <- authorize("key", "secret")
+token <- authorize("key", "secret")
+folder <- get_collection_folder("username", 0, token)
 }

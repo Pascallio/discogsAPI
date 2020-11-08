@@ -12,7 +12,7 @@ get_collection(
 \arguments{
 \item{username}{String containing a valid username}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{(optional) Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Retrieve a list of folders in a user’s collection.
@@ -24,5 +24,5 @@ If you are not authenticated as the collection owner, only folder ID 0 (the “A
 }
 \examples{
 token <- authorize("key", "secret")
-
+collection <- get_collection("username", token)
 }

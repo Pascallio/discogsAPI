@@ -15,7 +15,7 @@ get_wantlist(
 
 \item{options}{(optional) List of named parameters, see Details}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{(optional) Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Get a list of releases in a user's wantlist.
@@ -25,4 +25,9 @@ Returns the list of releases in a user’s wantlist. Accepts Pagination paramete
 Basic information about each release is provided, suitable for display in a list. For detailed information, make another API call to fetch the corresponding release.
 If the wantlist has been made private by its owner, you must be authenticated as the owner to view it.
 The notes field will be visible if you are authenticated as the wantlist owner.
+}
+\examples{
+wantlist <- get_wantlist("username")
+
+wantlist <- get_want_list("username", options = list("page" = 2))
 }

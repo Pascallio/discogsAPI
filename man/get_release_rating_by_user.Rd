@@ -15,7 +15,7 @@ get_release_rating_by_user(
 
 \item{username}{String containing a valid username}
 
-\item{token}{(optional) Token object obtained from authorize()}
+\item{token}{(optional) Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Retrieve rating of a release by a user

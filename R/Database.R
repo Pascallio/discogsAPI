@@ -8,7 +8,7 @@
 #'
 #'@param release_id Integer value representing a valid release ID
 #'@param options Named list containing optional params.
-#'@param token (optional) Token object obtained from authorize()
+#'@param token (optional) Token object obtained from authorize() or a string containing your personal access token
 #'@examples
 #'# Get a release
 #'release <- get_release(1)
@@ -31,7 +31,7 @@ get_release <- function(release_id, options=list(), token=NA){
 #'
 #'@param release_id Integer value representing a valid release ID
 #'@param username String containing a valid username
-#'@param token (optional) Token object obtained from authorize()
+#'@param token (optional) Token object obtained from authorize() or a string containing your personal access token
 #'@examples
 #'# Get a rating
 #'rating <- get_release_rating_by_user(1, "username")
@@ -52,7 +52,7 @@ get_release_rating_by_user <- function(release_id, username, token=NA){
 #'@param release_id Integer value representing a valid release ID
 #'@param username String containing a valid username
 #'@param rating Integer value between 0-5
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'@examples
 #'# Submit a rating
 #'token <- authorize("key", "secret")
@@ -72,7 +72,7 @@ put_release_rating <- function(release_id, username, rating, token){
 #'
 #'@param release_id Integer value representing a valid release ID
 #'@param username String containing a valid username
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'@examples
 #'# Delete a rating
 #'token <- authorize("key", "secret")
@@ -90,7 +90,7 @@ delete_release_rating <- function(release_id, username, token){
 #')
 #'
 #'@param release_id Integer value representing a valid release ID
-#'@param token (optional) Token object obtained from authorize()
+#'@param token (optional) Token object obtained from authorize() or a string containing your personal access token
 #'@examples
 #'# Retrieve the community rating
 #'rating <- get_community_release_rating(1)
@@ -107,7 +107,7 @@ get_community_release_rating <- function(release_id, token=NA){
 #')
 #'
 #'@param release_id Integer value representing a valid release ID
-#'@param token (optional) Token object obtained from authorize()
+#'@param token (optional) Token object obtained from authorize() or a string containing your personal access token
 #'@examples
 #'# Retrieve the release statistics
 #'stats <- get_release_stats(1)
@@ -124,7 +124,7 @@ get_release_stats <- function(release_id, token=NA){
 #')
 #'
 #'@param master_id Integer value representing a valid master ID
-#'@param token (optional) Token object obtained from authorize()
+#'@param token (optional) Token object obtained from authorize() or a string containing your personal access token
 #'@examples
 #'# Retrieve a master release
 #'release <- get_master_release(1000)
@@ -143,7 +143,7 @@ get_master_release <- function(master_id, token=NA){
 #'
 #'@param master_id Integer value representing a valid master ID
 #'@param options (optional) Parameters, see Details
-#'@param token (optional) Token object obtained from authorize()
+#'@param token (optional) Token object obtained from authorize() or a string containing your personal access token
 #'
 #'@details
 #'This function supports Pagination parameters. Below is a list of available fields.
@@ -178,7 +178,7 @@ get_master_release_versions <- function(master_id, options=list(), token=NA){
 #')
 #'
 #'@param artist_id Integer value representing a valid artist ID
-#'@param token (optional) Token object obtained from authorize()
+#'@param token (optional) Token object obtained from authorize() or a string containing your personal access token
 #'@examples
 #'# Retrieve artist information
 #'artist <- get_artist(1)
@@ -197,7 +197,7 @@ get_artist <- function(artist_id, token=NA){
 #'
 #'@param artist_id Integer value representing a valid artist ID
 #'@param options (optional) Parameters, see Details
-#'@param token (optional) Token object obtained from authorize()
+#'@param token (optional) Token object obtained from authorize() or a string containing your personal access token
 #'
 #'@details
 #'This function supports Pagination parameters. Below is a list of available fields.
@@ -223,7 +223,7 @@ get_artist_releases <- function(artist_id, options=list(), token=NA){
 #')
 #'
 #'@param label_id Integer value representing a valid release ID
-#'@param token (optional) Token object obtained from authorize()
+#'@param token (optional) Token object obtained from authorize() or a string containing your personal access token
 #'@examples
 #'# Retrieve label information
 #'label <- get_label(1)
@@ -242,7 +242,7 @@ get_label <- function(label_id, token=NA){
 #'
 #'@param release_id Integer value representing a valid release ID
 #'@param options (optional) Parameters, see Details
-#'@param token (optional) Token object obtained from authorize()
+#'@param token (optional) Token object obtained from authorize() or a string containing your personal access token
 #'@details
 #'This function supports Pagination parameters. Below is a list of available fields.
 #'\itemize{
@@ -265,7 +265,7 @@ get_all_label_releases <- function(label_id, options=list(), token=NA){
 #'  options = list()
 #')
 #'
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'@param query (optional) String value of query to search
 #'@param options (optional) Parameters, see Details
 #'@details

@@ -12,11 +12,14 @@ get_list(
 \arguments{
 \item{list_id}{Integer identifier for a user list}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Returns items from a specified List.
 }
 \details{
 Private Lists will only display when authenticated as the owner.
+}
+\examples{
+specific_list <- get_list(1)
 }

@@ -21,7 +21,7 @@ delete_release_from_folder(
 
 \item{instance_id}{The ID of the instance}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Delete Instance From Folder
@@ -35,4 +35,5 @@ Authentication as the collection owner is required.
 }
 \examples{
 token <- authorize("key", "secret")
+delete_release_from_folder("username", 0, 1000, 1, token)
 }

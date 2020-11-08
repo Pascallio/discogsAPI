@@ -15,7 +15,7 @@ delete_release_rating(
 
 \item{username}{String containing a valid username}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Delete a given rating

@@ -4,7 +4,7 @@
 #'  token
 #')
 #'
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'@examples
 #' token <- authorize("key", "secret")
 #' export_inventory(token)
@@ -20,7 +20,7 @@ export_inventory <- function(token){
 #'  options = list()
 #')
 #'
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'@param options (optional) List of named parameters, see Details
 #'@examples
 #' token <- authorize("key", "secret")
@@ -38,7 +38,7 @@ get_recent_exports <- function(token, options=list()){
 #')
 #'
 #'@param export_id Id of the export
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'@examples
 #' token <- authorize("key", "secret")
 #' details <- get_export_details(1, token)
@@ -55,7 +55,7 @@ get_export_details <- function(export_id, token){
 #')
 #'
 #'@param export_id Id of the export
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'@examples
 #'token <- authorize("key", "secret")
 #'csv <- download_export(1, token)
@@ -74,7 +74,7 @@ download_export <- function(export_id, token){
 #')
 #'
 #'@param path A string representing the source location of a csv file, see Details
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'
 #'@details
 #' ## File structure
@@ -138,7 +138,7 @@ add_inventory <- function(path, token){
 #')
 #'
 #'@param csv A string representing the source location of a csv file, see Details
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'
 #'@details
 #' ## File structure
@@ -203,7 +203,7 @@ change_inventory <- function(csv, token){
 #')
 #'
 #'@param csv A string representing the source location of a csv file, see Details
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'
 #'@details
 #' ## File structure
@@ -265,7 +265,7 @@ delete_inventory <- function(csv, token){
 #'  token
 #')
 #'
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'@examples
 #'token <- authorize("key", "secret")
 #'recent_uploads <- get_recent_uploads(token)
@@ -282,7 +282,7 @@ get_recent_uploads <- function(token){
 #')
 #'
 #'@param id upload identifier
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'@examples
 #'status <- get_upload(1)
 get_upload <- function(id, token=NA){

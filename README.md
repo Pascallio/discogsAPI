@@ -26,7 +26,7 @@ release <- get_release(1, my_token)
 print(release$num_for_sale)
 ```
 
-### Public use
+#### Public use
 For public use (e.g. an RShiny app), register your application at https://www.discogs.com/settings/developers to obtain an OAuth key and secret. Use these to authorize users using the `authorize` function. This function will halt the code untill the user has succesfully authorized the app. The Token object returned from the `authorize` function can be used just as a personal access token:
 
 ```{r}
@@ -38,5 +38,5 @@ release <- get_release(1, my_token)
 print(release$num_for_sale)
 ```
 
-## Details
+### Details
 Documentation about each function can be found in the manuals or for complete documentation, see https://www.discogs.com/developers

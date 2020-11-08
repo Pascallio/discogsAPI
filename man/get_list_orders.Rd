@@ -10,7 +10,7 @@ get_list_orders(
 )
 }
 \arguments{
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 
 \item{options}{(optional) Parameters, see Details}
 }

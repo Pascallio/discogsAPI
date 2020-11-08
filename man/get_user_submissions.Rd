@@ -6,17 +6,27 @@
 \usage{
 get_user_submissions(
  username,
- token = NA
+ token = NA,
+ options = list()
 )
 }
 \arguments{
 \item{username}{String containing a valid username}
 
 \item{token}{(optional) Token object obtained from authorize()}
+
+\item{options}{(optional) Named list with optional parameters, see Details}
 }
 \description{
 Retrieve a user’s submissions by username.
 }
 \details{
-Accepts Pagination parameters.
+Accepts Pagination parameters. Below is a list of available fields.
+\itemize{
+\item \strong{page:} integer, the page you want to request; \strong{example}: 1
+\item \strong{per_page:} integer, the number of items per page; \strong{example}: 50
+}
+}
+\examples{
+submissions <- geT_user_submissions("username", options = list("page" = 2))
 }

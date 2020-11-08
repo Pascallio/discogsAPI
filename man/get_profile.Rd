@@ -2,7 +2,7 @@
 % Please edit documentation in R/Identity.R
 \name{get_profile}
 \alias{get_profile}
-\title{Retrieve a user by username.}
+\title{Retrieve a user profile by username.}
 \usage{
 get_profile(
  username,
@@ -15,7 +15,7 @@ get_profile(
 \item{token}{Token object obtained from authorize()}
 }
 \description{
-Retrieve a user by username.
+Retrieve a user profile by username.
 }
 \details{
 If authenticated as the requested user, the email key will be visible,

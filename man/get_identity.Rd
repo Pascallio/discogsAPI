@@ -17,7 +17,9 @@ Retrieve basic information about the authenticated user.
 \details{
 You can use this resource to find out who you’re authenticated as,
 and it also doubles as a good sanity check to ensure that you’re using OAuth correctly.
+This function does not work with a personalized token, but only using OAuth.
 }
 \examples{
 token <- authorize("key", "secret")
+identity <- get_identity(token)
 }

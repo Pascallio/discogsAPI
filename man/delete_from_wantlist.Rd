@@ -16,16 +16,12 @@ delete_from_wantlist(
 
 \item{release_id}{Integer value representing a valid release ID}
 
-\item{token}{Token object obtained from authorize()}
-
-\item{options}{(optional) List of named parameters, see Details}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Delete a release from your wantlist
 }
-\details{
-
-}
 \examples{
 token <- authorize("key", "secret")
+delete_from_wantlist("username", 1, token)
 }

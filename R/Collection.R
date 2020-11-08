@@ -6,7 +6,7 @@
 #')
 #'
 #'@param username String containing a valid username
-#'@param token Token object obtained from authorize()
+#'@param token (optional) Token object obtained from authorize() or a string containing your personal access token
 #'
 #'@details
 #'If the collection has been made private by its owner, authentication as the collection owner is required.
@@ -29,7 +29,7 @@ get_collection <- function(username, token=NA){
 #')
 #'
 #'@param username String containing a valid username
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'@param name (optional) Name for the folder
 #'
 #'@details
@@ -52,7 +52,7 @@ create_collection_folder <- function(username, token, name=""){
 #'
 #'@param username String containing a valid username
 #'@param folder_id Valid identifier for a folder
-#'@param token Token object obtained from authorize()
+#'@param token (optional) Token object obtained from authorize() or a string containing your personal access token
 #'
 #'@details
 #'If folder_id is not 0, authentication as the collection owner is required.
@@ -75,7 +75,7 @@ get_collection_folder <- function(username, folder_id, token=NA){
 #'
 #'@param username String containing a valid username
 #'@param folder_id Valid identifier for a folder
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'@param name (optional) Name for the folder
 #'
 #'@details
@@ -99,7 +99,7 @@ edit_collection_folder <- function(username, folder_id, token, name=""){
 #'
 #'@param username String containing a valid username
 #'@param folder_id Valid identifier for a folder
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'
 #'@details
 #'A folder must be empty before it can be deleted.
@@ -123,7 +123,7 @@ delete_collection_folder <- function(username, folder_id, token){
 #'
 #'@param username String containing a valid username
 #'@param release_id Integer value representing a valid release ID
-#'@param token (optional) Token object obtained from authorize()
+#'@param token (optional) Token object obtained from authorize() or a string containing your personal access token
 #'
 #'@details
 #'View the user’s collection folders which contain a specified release.
@@ -152,7 +152,7 @@ get_collection_items_by_release <- function(username, release_id, token=NA){
 #'@param username String containing a valid username
 #'@param folder_id Valid identifier for a folder
 #'@param options (optional) List of named parameters, see Details
-#'@param token (optional) Token object obtained from authorize()
+#'@param token (optional) Token object obtained from authorize() or a string containing your personal access tokens
 #'
 #'@details
 #'Returns the list of item in a folder in a user’s collection. Accepts Pagination parameters.
@@ -180,7 +180,7 @@ get_collection_items_by_folder <- function(username, folder_id, options=list(), 
 #'@param username String containing a valid username
 #'@param folder_id Valid identifier for a folder
 #'@param release_id Integer value representing a valid release ID
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'
 #'@details
 #'Add a release to a folder in a user’s collection.
@@ -210,7 +210,7 @@ add_to_collection_folder <- function(username, folder_id, release_id, token){
 #'@param folder_id Valid identifier for a folder
 #'@param release_id Integer value representing a valid release ID
 #'@param instance_id The ID of the instance
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'@param rating Integer value between 0-5
 #'
 #'@details
@@ -240,7 +240,7 @@ change_release_rating <- function(username, folder_id, release_id, instance_id, 
 #'@param folder_id Valid identifier for a folder
 #'@param release_id Integer value representing a valid release ID
 #'@param instance_id The ID of the instance
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'
 #'@details
 #'Remove an instance of a release from a user’s collection folder.
@@ -267,7 +267,7 @@ delete_release_from_folder <- function(username, folder_id, release_id, instance
 #')
 #'
 #'@param username String containing a valid username
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'
 #'@details
 #'Retrieve a list of user-defined collection notes fields. These fields are available on every release in the collection.
@@ -301,7 +301,7 @@ get_list_custom_fields <- function(username, token=NA){
 #'@param release_id Integer value representing a valid release ID
 #'@param instance_id The ID of the instance
 #'@param field_id The ID of the field
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'@examples
 #'token <- authorize("key", "secret")
 #'edit_field_instance(username = "username", value = "my_value", folder_id = 0,
@@ -320,7 +320,7 @@ edit_field_instance <- function(username, value, folder_id, release_id, instance
 #')
 #'
 #'@param username String containing a valid username
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'
 #'@details
 #'Returns the minimum, median, and maximum value of a user’s collection.

@@ -11,14 +11,15 @@ post(
 )
 }
 \arguments{
-\item{token}{Token object obtained from authorize()}
+\item{url}{full URL to API endpoint}
+
+\item{content}{The content to post / upload}
+
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Post request to the discogs server
 }
 \details{
-
-}
-\examples{
-token <- authorize("key", "secret")
+This function is not supposed to used directly, but through other functions instead
 }

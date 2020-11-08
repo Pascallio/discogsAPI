@@ -12,7 +12,7 @@ get_collection_value(
 \arguments{
 \item{username}{String containing a valid username}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Get the value of the user's collection
@@ -24,4 +24,5 @@ Authentication as the collection owner is required.
 }
 \examples{
 token <- authorize("key", "secret")
+value <- get_collection_value("username", token)
 }

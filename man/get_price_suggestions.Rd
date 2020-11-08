@@ -12,7 +12,7 @@ get_price_suggestions(
 \arguments{
 \item{release_id}{Integer value representing a valid release ID}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Retrieve price suggestions for the provided Release ID

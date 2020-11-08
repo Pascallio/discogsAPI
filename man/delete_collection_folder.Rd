@@ -15,7 +15,7 @@ delete_collection_folder(
 
 \item{folder_id}{Valid identifier for a folder}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Delete a folder from a user’s collection.
@@ -25,5 +25,6 @@ A folder must be empty before it can be deleted.
 Authentication as the collection owner is required.
 }
 \examples{
-#'token <- authorize("key", "secret")
+token <- authorize("key", "secret")
+delete_collection_folder("username", 1, token)
 }

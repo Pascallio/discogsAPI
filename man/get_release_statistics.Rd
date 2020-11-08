@@ -15,7 +15,7 @@ get_release_statistics(
 
 \item{options}{(optional) Parameters, see Details}
 
-\item{token}{(optional) Token object obtained from authorize()}
+\item{token}{(optional) Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Retrieve marketplace statistics for the provided Release ID

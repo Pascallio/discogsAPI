@@ -21,5 +21,12 @@ get_user_contributions(
 Retrieve a user’s contributions by username.
 }
 \details{
-Accepts Pagination parameters.
+Accepts Pagination parameters. Below is a list of available fields.
+\itemize{
+\item \strong{page:} integer, the page you want to request; \strong{example}: 1
+\item \strong{per_page:} integer, the number of items per page; \strong{example}: 50
+}
+}
+\examples{
+contributions <- geT_user_contributions("username", options = list("page" = 2, "per_page" = 50))
 }

@@ -12,7 +12,7 @@ get_artist(
 \arguments{
 \item{artist_id}{Integer value representing a valid artist ID}
 
-\item{token}{(optional) Token object obtained from authorize()}
+\item{token}{(optional) Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Retrieve artist information

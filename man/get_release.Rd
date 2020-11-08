@@ -15,7 +15,7 @@ get_release(
 
 \item{options}{Named list containing optional params.}
 
-\item{token}{(optional) Token object obtained from authorize()}
+\item{token}{(optional) Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Retrieve release info by a given ID

@@ -12,7 +12,7 @@ get_list_custom_fields(
 \arguments{
 \item{username}{String containing a valid username}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 List custom fields in collection
@@ -26,4 +26,5 @@ If you are not authenticated as the collection owner, only fields with public se
 }
 \examples{
 token <- authorize("key", "secret")
+list <- get_list_custom_fields("username", token)
 }

@@ -4,14 +4,18 @@
 \alias{authorize}
 \title{Authorize using OAuth}
 \usage{
-authorize(key, secret, cache = T)
+authorize(
+ key,
+ secret,
+ cache = T
+)
 }
 \arguments{
 \item{key}{Your key obtained from Discogs}
 
 \item{secret}{Your secret obtained from Discogs}
 
-\item{cache}{Should the authorization be cached?}
+\item{cache}{(optional) Should the authorization be cached?}
 }
 \description{
 Authorize using OAuth
@@ -23,5 +27,5 @@ To obtain a developers key and secret, visit \href{https://www.discogs.com/setti
 \examples{
 my_key <- "abcde"
 my_secret <- "secret"
-authorize(my_key, my_secret)
+token <- authorize(my_key, my_secret)
 }

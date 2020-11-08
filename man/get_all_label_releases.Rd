@@ -13,7 +13,7 @@ get_release_stats(
 \arguments{
 \item{options}{(optional) Parameters, see Details}
 
-\item{token}{(optional) Token object obtained from authorize()}
+\item{token}{(optional) Token object obtained from authorize() or a string containing your personal access token}
 
 \item{release_id}{Integer value representing a valid release ID}
 }

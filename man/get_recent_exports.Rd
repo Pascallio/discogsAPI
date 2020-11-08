@@ -10,15 +10,12 @@ get_recent_exports(
 )
 }
 \arguments{
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 
 \item{options}{(optional) List of named parameters, see Details}
 }
 \description{
 Get your recent exports
-}
-\details{
-
 }
 \examples{
 token <- authorize("key", "secret")

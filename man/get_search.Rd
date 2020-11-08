@@ -11,7 +11,7 @@ get_search(
 )
 }
 \arguments{
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 
 \item{query}{(optional) String value of query to search}
 
@@ -23,7 +23,7 @@ Get release statistics
 \details{
 This function supports many parameters. Below is a list of available fields, all fields are of type \strong{string}.
 \itemize{
-\item{ \strong{type:} }{One of release, master, artist or label; \strong{example}: "release"}
+\item{ \strong{type:} }{One of \code{release}, \code{master}, \code{artist} or \code{label}; \strong{example}: "release"}
 \item{ \strong{title:} }{Search by combined “Artist Name - Release Title” title field; \strong{example}: nirvana - nevermind}
 \item{ \strong{release_title:} }{Search release titles; \strong{example}: "nevermind"}
 \item{ \strong{credit:} }{Search release credits; \strong{example}: "kurt"}

@@ -15,7 +15,7 @@ get_collection_items_by_release(
 
 \item{release_id}{Integer value representing a valid release ID}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{(optional) Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Get collection items by release
@@ -29,5 +29,5 @@ The release_id must be non-zero.
 Authentication as the collection owner is required if the owner’s collection is private.
 }
 \examples{
-
+items <- get_collection_items_by_release("username", 1000)
 }

@@ -13,9 +13,9 @@ create_collection_folder(
 \arguments{
 \item{username}{String containing a valid username}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 
-\item{name}{}
+\item{name}{(optional) Name for the folder}
 }
 \description{
 Create a new folder in your collection
@@ -24,5 +24,6 @@ Create a new folder in your collection
 Authentication as the collection owner is required.
 }
 \examples{
-#'token <- authorize("key", "secret")
+token <- authorize("key", "secret")
+create_collection_folder("username", token, "my_folder")
 }

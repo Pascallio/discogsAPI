@@ -18,18 +18,18 @@ get_collection_items_by_folder(
 
 \item{options}{(optional) List of named parameters, see Details}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{(optional) Token object obtained from authorize() or a string containing your personal access tokens}
 }
 \description{
 Collection Items By Folder
 }
 \details{
-
-}
-\examples{
-Returns the list of item in a folder in a userâ€™s collection. Accepts Pagination parameters.
+Returns the list of item in a folder in a user’s collection. Accepts Pagination parameters.
 Basic information about each release is provided, suitable for display in a list. For detailed information, make another API call to fetch the corresponding release.
 If folder_id is not 0, or the collection has been made private by its owner, authentication as the collection owner is required.
 If you are not authenticated as the collection owner, only public notes fields will be visible.
-Valid sort keys are: `label`, `artist`, `title`, `catno`, `format`, `rating`, `added`, `year`
+Valid sort values are: \code{label}, \code{artist}, \code{title}, \code{catno}, \code{format}, \code{rating}, \code{added}, \code{year}
+}
+\examples{
+items <- get_collection_items_by_folder("username", 0, options = list("sort" = "label"))
 }

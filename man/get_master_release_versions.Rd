@@ -15,7 +15,7 @@ get_master_release_versions(
 
 \item{options}{(optional) Parameters, see Details}
 
-\item{token}{(optional) Token object obtained from authorize()}
+\item{token}{(optional) Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Get versions of the given master release

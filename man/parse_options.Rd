@@ -9,11 +9,11 @@ parse_options(
 )
 }
 \arguments{
-\item{options}{}
+\item{options}{Named list containing a key - value combination}
 }
 \description{
 parse optional parameters
 }
 \details{
-
+This function is not supposed to used directly, but through other functions instead
 }

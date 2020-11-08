@@ -18,7 +18,7 @@ add_to_collection_folder(
 
 \item{release_id}{Integer value representing a valid release ID}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Add release to collection
@@ -30,4 +30,5 @@ Authentication as the collection owner is required.
 }
 \examples{
 token <- authorize("key", "secret")
+add_to_collection_folder("username", 0, 1000, token)
 }

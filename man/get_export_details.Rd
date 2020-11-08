@@ -12,13 +12,10 @@ get_export_details(
 \arguments{
 \item{export_id}{Id of the export}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Get details about a specific export
-}
-\details{
-
 }
 \examples{
 token <- authorize("key", "secret")

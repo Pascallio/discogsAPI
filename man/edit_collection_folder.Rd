@@ -16,9 +16,9 @@ edit_collection_folder(
 
 \item{folder_id}{Valid identifier for a folder}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 
-\item{name}{}
+\item{name}{(optional) Name for the folder}
 }
 \description{
 Edit a folder’s metadata.
@@ -29,4 +29,5 @@ Authentication as the collection owner is required.
 }
 \examples{
 token <- authorize("key", "secret")
+edit_collection_folder("username", 3, token, name = "new_folder_name")
 }

@@ -22,9 +22,9 @@ change_release_rating(
 
 \item{instance_id}{The ID of the instance}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 
-\item{rating}{Value between 0-5}
+\item{rating}{Integer value between 0-5}
 }
 \description{
 Change the rating of a release
@@ -35,4 +35,5 @@ Authentication as the collection owner is required.
 }
 \examples{
 token <- authorize("key", "secret")
+change_release_rating("username", 0, 1000, 1, token, 4)
 }

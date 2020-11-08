@@ -12,7 +12,7 @@ get_label(
 \arguments{
 \item{label_id}{Integer value representing a valid release ID}
 
-\item{token}{(optional) Token object obtained from authorize()}
+\item{token}{(optional) Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Get label information

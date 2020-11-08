@@ -12,7 +12,7 @@ get_upload(
 \arguments{
 \item{id}{upload identifier}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Get details about the status of an inventory upload.

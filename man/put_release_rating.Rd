@@ -18,7 +18,7 @@ put_release_rating(
 
 \item{rating}{Integer value between 0-5}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Submit a rating for a release

@@ -16,7 +16,7 @@ add_to_wantlist(
 
 \item{release_id}{Integer value representing a valid release ID}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 
 \item{options}{(optional) List of named parameters, see Details}
 }
@@ -26,7 +26,14 @@ Add a new release to your wantlist
 \details{
 Add a release to a user’s wantlist.
 Authentication as the wantlist owner is required.
+\subsection{Parameters}{
+\itemize{
+\item \strong{notes}: User notes to associate with this release.
+\item \strong{rating}: User’s rating of this release, from 0 (unrated) to 5 (best). Defaults to 0.
+}
+}
 }
 \examples{
 token <- authorize("key", "secret")
+add_new_to_wantlist("username", 1000, token)
 }

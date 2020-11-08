@@ -13,7 +13,7 @@ add_order_message(
 \arguments{
 \item{order_id}{The ID of the order you are fetching}
 
-\item{token}{(optional) Token object obtained from authorize()}
+\item{token}{(optional) Token object obtained from authorize() or a string containing your personal access token}
 
 \item{options}{(optional) Parameters, see Details}
 }

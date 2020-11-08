@@ -13,7 +13,7 @@ get_list_order_messages(
 \arguments{
 \item{order_id}{The ID of the order you are fetching}
 
-\item{token}{Token object obtained from authorize()}
+\item{token}{Token object obtained from authorize() or a string containing your personal access token}
 
 \item{options}{(optional) Parameters, see Details}
 }

@@ -15,7 +15,7 @@ get_inventory(
 
 \item{options}{(optional) Parameters, see Details}
 
-\item{token}{(optional) Token object obtained from authorize()}
+\item{token}{(optional) Token object obtained from authorize() or a string containing your personal access token}
 }
 \description{
 Get a seller’s inventory
