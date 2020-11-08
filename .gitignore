@@ -1,2 +1,9 @@
 .httr-oauth
 .Rproj.user
+.httr-oauth
+.Rbuildignore
+.Rhistory
+build.R
+DESCRIPTION
+DiscogsAPI.Rproj
+NAMESPACE
