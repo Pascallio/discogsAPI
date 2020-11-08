@@ -8,7 +8,7 @@
 #'
 #'@param username String containing a valid username
 #'@param options (optional) List of named parameters, see Details
-#'@param token Token object obtained from authorize()
+#'@param token (optional) Token object obtained from authorize()
 #'
 #'@details
 #'Returns the list of releases in a user’s wantlist. Accepts Pagination parameters.
@@ -18,7 +18,7 @@
 #'@examples
 #'wantlist <- get_wantlist("username")
 #'
-#'wantlist <- get_want_list("username", options = list())
+#'wantlist <- get_want_list("username", options = list("page" = 2))
 get_wantlist <- function(username, options=list(), token=NA){
   url <- sprintf("%s/users/%s/wants?", BASE_URL, username, parse_options(options))
   return(content(get(url, config(token = token))))
@@ -41,8 +41,13 @@ get_wantlist <- function(username, options=list(), token=NA){
 #'@details
 #'Add a release to a user’s wantlist.
 #'Authentication as the wantlist owner is required.
+#'## Parameters
+#'* __notes__: User notes to associate with this release.
+#'* __rating__: User’s rating of this release, from 0 (unrated) to 5 (best). Defaults to 0.
+#'
 #'@examples
 #'token <- authorize("key", "secret")
+#'add_new_to_wantlist("username", 1000, token)
 add_new_to_wantlist <- function(username, release_id, token, options=list()){
   url <- sprintf("%s/users/%s/wants/%s?%s", BASE_URL, username, release_id, parse_options(options))
   return(put(url, content="", token))
@@ -65,6 +70,9 @@ add_new_to_wantlist <- function(username, release_id, token, options=list()){
 #'@details
 #'Add a release to a user’s wantlist.
 #'Authentication as the wantlist owner is required.
+#'#'## Parameters
+#'* __notes__: User notes to associate with this release.
+#'* __rating__: User’s rating of this release, from 0 (unrated) to 5 (best). Defaults to 0.
 #'@examples
 #'token <- authorize("key", "secret")
 add_to_wantlist <- function(username, release_id, token, options=list()){
@@ -84,14 +92,10 @@ add_to_wantlist <- function(username, release_id, token, options=list()){
 #'@param username String containing a valid username
 #'@param release_id Integer value representing a valid release ID
 #'@param token Token object obtained from authorize()
-#'@param options (optional) List of named parameters, see Details
-#'
-#'@details
-#'
 #'@examples
 #'token <- authorize("key", "secret")
 #'delete_from_wantlist("username", 1, token)
-delete_from_wantlist <- function(username, release_id, token, options=list()){
+delete_from_wantlist <- function(username, release_id, token){
   url <- sprintf("%s/users/%s/wants/%s?%s", BASE_URL, username, release_id, parse_options(options))
   return(delete(url, token))
 }

@@ -14,3 +14,9 @@ secret <- "cwARlOjMeNcKWEGRPEjvBUafrFPFhEiy"
 token <- authorize(key, secret)
 get_identity(token)
 r <- get_release(1, token = token)
+
+
+#devtools::install_github("Pascallio/discogsAPI")
+
+r <- get_release(1)
+r$num_for_sale

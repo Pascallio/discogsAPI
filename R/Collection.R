@@ -123,7 +123,7 @@ delete_collection_folder <- function(username, folder_id, token){
 #'
 #'@param username String containing a valid username
 #'@param release_id Integer value representing a valid release ID
-#'@param token Token object obtained from authorize()
+#'@param token (optional) Token object obtained from authorize()
 #'
 #'@details
 #'View the user’s collection folders which contain a specified release.
@@ -152,14 +152,14 @@ get_collection_items_by_release <- function(username, release_id, token=NA){
 #'@param username String containing a valid username
 #'@param folder_id Valid identifier for a folder
 #'@param options (optional) List of named parameters, see Details
-#'@param token Token object obtained from authorize()
+#'@param token (optional) Token object obtained from authorize()
 #'
 #'@details
 #'Returns the list of item in a folder in a user’s collection. Accepts Pagination parameters.
 #'Basic information about each release is provided, suitable for display in a list. For detailed information, make another API call to fetch the corresponding release.
 #'If folder_id is not 0, or the collection has been made private by its owner, authentication as the collection owner is required.
 #'If you are not authenticated as the collection owner, only public notes fields will be visible.
-#'Valid sort keys are: `label`, `artist`, `title`, `catno`, `format`, `rating`, `added`, `year`
+#'Valid sort values are: `label`, `artist`, `title`, `catno`, `format`, `rating`, `added`, `year`
 #'
 #'@examples
 #' items <- get_collection_items_by_folder("username", 0, options = list("sort" = "label"))
@@ -211,7 +211,7 @@ add_to_collection_folder <- function(username, folder_id, release_id, token){
 #'@param release_id Integer value representing a valid release ID
 #'@param instance_id The ID of the instance
 #'@param token Token object obtained from authorize()
-#'@param rating Value between 0-5
+#'@param rating Integer value between 0-5
 #'
 #'@details
 #'Change the rating on a release and/or move the instance to another folder.
@@ -219,7 +219,7 @@ add_to_collection_folder <- function(username, folder_id, release_id, token){
 #'Authentication as the collection owner is required.
 #'@examples
 #'token <- authorize("key", "secret")
-
+#'change_release_rating("username", 0, 1000, 1, token, 4)
 change_release_rating <- function(username, folder_id, release_id, instance_id, token, rating=0){
   url <- sprintf("%s/users/%s/collection/folders/%s/releases/%s/instances/%s",
                  BASE_URL, username, folder_id, release_id, instance_id)
@@ -251,6 +251,7 @@ change_release_rating <- function(username, folder_id, release_id, instance_id, 
 #'
 #'@examples
 #'token <- authorize("key", "secret")
+#'delete_release_from_folder("username", 0, 1000, 1, token)
 
 delete_release_from_folder <- function(username, folder_id, release_id, instance_id, token){
   url <- sprintf("%s/users/%s/collection/folders/%s/releases/%s/instances/%s",
@@ -276,9 +277,7 @@ delete_release_from_folder <- function(username, folder_id, release_id, instance
 #'If you are not authenticated as the collection owner, only fields with public set to true will be visible.
 #'@examples
 #'token <- authorize("key", "secret")
-
-
-
+#'list <- get_list_custom_fields("username", token)
 get_list_custom_fields <- function(username, token=NA){
   url <- sprintf("%s/users/%s/collection/fields", BASE_URL, username)
   return(content(get(url, config(token = token))))
@@ -303,10 +302,10 @@ get_list_custom_fields <- function(username, token=NA){
 #'@param instance_id The ID of the instance
 #'@param field_id The ID of the field
 #'@param token Token object obtained from authorize()
-#'
-#'@details
-#'
 #'@examples
+#'token <- authorize("key", "secret")
+#'edit_field_instance(username = "username", value = "my_value", folder_id = 0,
+#'                    release_id = 1000, instance_id = 1, field_id = 1, token = token)
 edit_field_instance <- function(username, value, folder_id, release_id, instance_id, field_id, token){
   url <- sprintf("%s/users/%s/collection/folders/%s/releases/%s/instances/%s/fields/%s?%s",
                  BASE_URL, username, folder_id, release_id, instance_id, field_id, value)
@@ -330,6 +329,7 @@ edit_field_instance <- function(username, value, folder_id, release_id, instance
 #'
 #'@examples
 #'token <- authorize("key", "secret")
+#'value <- get_collection_value("username", token)
 get_collection_value <- function(username, token){
   url <- sprintf("%s/users/%s/collection/value", BASE_URL, username)
   return(content(get(url, config(token = token))))

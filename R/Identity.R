@@ -13,7 +13,7 @@
 # For more detailed information, make another request for the user’s Profile.
 #'@examples
 #'token <- authorize("key", "secret")
-#'get_identity(token)
+#'identity <- get_identity(token)
 
 get_identity <- function(token){
   url = sprintf("%s/oauth/identity", BASE_URL)

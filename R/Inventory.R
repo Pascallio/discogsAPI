@@ -5,9 +5,6 @@
 #')
 #'
 #'@param token Token object obtained from authorize()
-#'
-#'@details
-#'
 #'@examples
 #' token <- authorize("key", "secret")
 #' export_inventory(token)
@@ -25,9 +22,6 @@ export_inventory <- function(token){
 #'
 #'@param token Token object obtained from authorize()
 #'@param options (optional) List of named parameters, see Details
-#'
-#'@details
-#'
 #'@examples
 #' token <- authorize("key", "secret")
 #' exports <- get_recent_exports(token)
@@ -45,9 +39,6 @@ get_recent_exports <- function(token, options=list()){
 #'
 #'@param export_id Id of the export
 #'@param token Token object obtained from authorize()
-#'
-#'@details
-#'
 #'@examples
 #' token <- authorize("key", "secret")
 #' details <- get_export_details(1, token)
@@ -65,9 +56,6 @@ get_export_details <- function(export_id, token){
 #'
 #'@param export_id Id of the export
 #'@param token Token object obtained from authorize()
-#'
-#'@details
-#'
 #'@examples
 #'token <- authorize("key", "secret")
 #'csv <- download_export(1, token)
