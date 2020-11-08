@@ -7,7 +7,7 @@
 #' )
 #' @param username String containing a valid username
 #' @param options (optional) Parameters, see Details
-#' @param token (optional) Token object obtained from authorize()
+#' @param token (optional) Token object obtained from authorize() or a string containing your personal access token
 #' @details
 #' If you are not authenticated as the inventory owner, only items that have a status of For Sale will be visible.
 #' If you are authenticated as the inventory owner you will get additional weight, format_quantity, external_id, and location keys.
@@ -45,7 +45,7 @@ get_inventory <- function(username, options=list(), token=NA){
 #' )
 #' @param listing_id The ID of the listing you are fetching
 #' @param options (optional) Parameters, see Details
-#' @param token (optional) Token object obtained from authorize()
+#' @param token (optional) Token object obtained from authorize() or a string containing your personal access token
 #' @details
 #' If the authorized user is the listing owner the listing will include the weight, format_quantity, external_id, and location keys.
 #' If the user is authorized, the listing will contain a in_cart boolean field indicating whether or not this listing is in their cart.
@@ -75,7 +75,7 @@ get_listing <- function(listing_id, options=list(), token=NA){
 #' @param condition The condition of the release you are posting. See Details
 #' @param price The price of the item (in the seller’s currency).
 #' @param status The status of the listing. See Details
-#' @param token Token object obtained from authorize()
+#' @param token Token object obtained from authorize() or a string containing your personal access token
 #' @param options (optional) Parameters, see Details
 #' @details
 #' Create a Marketplace listing.
@@ -159,7 +159,7 @@ edit_listing <- function(listing_id, release_id, condition, price, status, token
 #' )
 #' @param listing_id The ID of the listing you are fetching
 #' @param options (optional) Parameters, see Details
-#' @param token Token object obtained from authorize()
+#' @param token Token object obtained from authorize() or a string containing your personal access token
 #' @details
 #' Permanently remove a listing from the Marketplace.
 #' Authentication as the listing owner is required.
@@ -185,7 +185,7 @@ delete_listing <- function(listing_id, token, options=list()){
 #' @param condition The condition of the release you are posting. See Details
 #' @param price The price of the item (in the seller’s currency).
 #' @param status The status of the listing. See Details
-#' @param token Token object obtained from authorize()
+#' @param token Token object obtained from authorize() or a string containing your personal access token
 #' @param options (optional) Parameters, see Details
 #' @details
 #' Create a Marketplace listing.
@@ -267,7 +267,7 @@ new_listing <- function(listing_id, release_id, condition, price, status, token,
 #'   token
 #' )
 #' @param order_id The ID of the order you are fetching
-#' @param token Token object obtained from authorize()
+#' @param token Token object obtained from authorize() or a string containing your personal access token
 #' @details
 #' View the data associated with an order.
 #' Authentication as the seller is required.
@@ -289,7 +289,7 @@ get_order <- function(order_id, token){
 #'   options = list()
 #' )
 #' @param order_id The ID of the order you are fetching
-#' @param token Token object obtained from authorize()
+#' @param token Token object obtained from authorize() or a string containing your personal access token
 #' @param options (optional) Parameters, see Details
 #' @details
 #' Edit the data associated with an order.
@@ -320,7 +320,7 @@ edit_order <- function(order_id, token, options=list()){
 #'   token,
 #'   options = list(),
 #' )
-#' @param token Token object obtained from authorize()
+#' @param token Token object obtained from authorize() or a string containing your personal access token
 #' @param options (optional) Parameters, see Details
 #' @details
 #' Returns a list of the authenticated user’s orders. Accepts Pagination parameters.
@@ -339,7 +339,7 @@ get_list_orders <- function(token, options=list()){
 #'   options = list(),
 #' )
 #' @param order_id The ID of the order you are fetching
-#' @param token Token object obtained from authorize()
+#' @param token Token object obtained from authorize() or a string containing your personal access token
 #' @param options (optional) Parameters, see Details
 #' @details
 #' Returns a list of the order’s messages with the most recent first. Accepts Pagination parameters.
@@ -359,7 +359,7 @@ get_list_order_messages <- function(order_id, token, options=list()){
 #'   options = list(),
 #' )
 #' @param order_id The ID of the order you are fetching
-#' @param token (optional) Token object obtained from authorize()
+#' @param token (optional) Token object obtained from authorize() or a string containing your personal access token
 #' @param options (optional) Parameters, see Details
 #' @details
 #' Adds a new message to the order’s message log.
@@ -379,7 +379,7 @@ add_order_message <- function(order_id, token, options=list()){
 #'   token = NA
 #' )
 #' @param options (optional) Parameters, see Details
-#' @param token (optional) Token object obtained from authorize()
+#' @param token (optional) Token object obtained from authorize() or a string containing your personal access token
 #' @details
 #' The Fee resource allows you to quickly calculate the fee for selling an item on the Marketplace.
 #' @examples
@@ -397,7 +397,7 @@ get_fee <- function(options=list(), token=NA){
 #' )
 #' @param price The price to calculate a fee from
 #' @param options (optional) Parameters, see Details
-#' @param token (optional) Token object obtained from authorize()
+#' @param token (optional) Token object obtained from authorize() or a string containing your personal access token
 #' @details
 #' The Fee resource allows you to quickly calculate the fee for selling an item on the Marketplace given a particular currency.
 #' @examples
@@ -413,7 +413,7 @@ get_fee_with_currency <- function(price, options=list(), token=NA){
 #'   token
 #' )
 #' @param release_id Integer value representing a valid release ID
-#' @param token Token object obtained from authorize()
+#' @param token Token object obtained from authorize() or a string containing your personal access token
 #' @details
 #' Retrieve price suggestions for the provided Release ID. If no suggestions are available, an empty object will be returned.
 #' Authentication is required, and the user needs to have filled out their seller settings.
@@ -434,7 +434,7 @@ get_price_suggestions <- function(release_id, token){
 #' )
 #' @param release_id Integer value representing a valid release ID
 #' @param options (optional) Parameters, see Details
-#' @param token (optional) Token object obtained from authorize()
+#' @param token (optional) Token object obtained from authorize() or a string containing your personal access token
 #' @details
 #' Retrieve marketplace statistics for the provided Release ID.
 #' These statistics reflect the state of the release in the marketplace currently,

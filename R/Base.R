@@ -7,13 +7,11 @@ BASE_URL <- "https://api.discogs.com"
 #'  token = NA
 #')
 #'
-#'@param url
-#'@param token Token object obtained from authorize()
+#'@param url full URL to API endpoint
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'
 #'@details
-#'This function is not supposed to used directly, but is used through other functions
-#'
-#'@examples
+#'This function is not supposed to used directly, but through other functions instead
 get <- function(url, token=NA){
     if (length(token) == 0 || suppressWarnings(is.na(token))){
         Sys.sleep(60 / 25)
@@ -36,14 +34,12 @@ get <- function(url, token=NA){
 #'  token = NA
 #')
 #'
-#'@param url
-#'@param content
-#'@param token Token object obtained from authorize()
+#'@param url full URL to API endpoint
+#'@param content The content to post / upload
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'
 #'@details
-#'
-#'@examples
-#'token <- authorize("key", "secret")
+#'This function is not supposed to used directly, but through other functions instead
 post <- function(url, content, token){
   return(httr::POST(url, body = content, config(token = token)))
 }
@@ -56,14 +52,12 @@ post <- function(url, content, token){
 #'  token
 #')
 #'
-#'@param url
-#'@param content
-#'@param token Token object obtained from authorize()
+#'@param url full URL to API endpoint
+#'@param content The content to post / upload
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'
 #'@details
-#'
-#'@examples
-#'token <- authorize("key", "secret")
+#'This function is not supposed to used directly, but through other functions instead
 put <- function(url, content, token){
   return(httr::PUT(url, body = content, config(token = token)))
 }
@@ -75,13 +69,11 @@ put <- function(url, content, token){
 #'  token
 #')
 #'
-#'@param url
-#'@param token Token object obtained from authorize()
+#'@param url full URL to API endpoint
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'
 #'@details
-#'
-#'@examples
-#'token <- authorize("key", "secret")
+#'This function is not supposed to used directly, but through other functions instead
 delete <- function(url, token){
   return(httr::DELETE(url, config(token = token)))
 }
@@ -92,11 +84,10 @@ delete <- function(url, token){
 #'  options
 #')
 #'
-#'@param options
+#'@param options Named list containing a key - value combination
 #'
 #'@details
-#'
-#'@examples
+#'This function is not supposed to used directly, but through other functions instead
 parse_options <- function(options){
   if (length(options) > 0){
     options <- paste0(sapply(1:length(options), function(i){

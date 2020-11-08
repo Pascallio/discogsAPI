@@ -1,9 +1,15 @@
 
 #'Authorize using OAuth
 #'
+#'@usage authorize(
+#'  key,
+#'  secret,
+#'  cache = T
+#')
+#'
 #'@param key Your key obtained from Discogs
 #'@param secret Your secret obtained from Discogs
-#'@param cache Should the authorization be cached?
+#'@param cache (optional) Should the authorization be cached?
 #'
 #'@details
 #'This function uses the __httr__ package to make OAuth 1.0 requests.

@@ -8,7 +8,7 @@
 #'
 #'@param username String containing a valid username
 #'@param options (optional) List of named parameters, see Details
-#'@param token (optional) Token object obtained from authorize()
+#'@param token (optional) Token object obtained from authorize() or a string containing your personal access token
 #'
 #'@details
 #'Returns the list of releases in a user’s wantlist. Accepts Pagination parameters.
@@ -35,7 +35,7 @@ get_wantlist <- function(username, options=list(), token=NA){
 #'
 #'@param username String containing a valid username
 #'@param release_id Integer value representing a valid release ID
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'@param options (optional) List of named parameters, see Details
 #'
 #'@details
@@ -64,7 +64,7 @@ add_new_to_wantlist <- function(username, release_id, token, options=list()){
 #'
 #'@param username String containing a valid username
 #'@param release_id Integer value representing a valid release ID
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'@param options (optional) List of named parameters, see Details
 #'
 #'@details
@@ -75,6 +75,9 @@ add_new_to_wantlist <- function(username, release_id, token, options=list()){
 #'* __rating__: User’s rating of this release, from 0 (unrated) to 5 (best). Defaults to 0.
 #'@examples
 #'token <- authorize("key", "secret")
+#'add_to_wantlist("username", 1000, token)
+#'
+#'add_to_wantlist("username", 1000, token, options = list(notes = "B-side is really cool", rating = 4))
 add_to_wantlist <- function(username, release_id, token, options=list()){
   url <- sprintf("%s/users/%s/wants/%s?%s", BASE_URL, username, release_id, parse_options(options))
   return(post(url, content="", token))
@@ -91,7 +94,7 @@ add_to_wantlist <- function(username, release_id, token, options=list()){
 #'
 #'@param username String containing a valid username
 #'@param release_id Integer value representing a valid release ID
-#'@param token Token object obtained from authorize()
+#'@param token Token object obtained from authorize() or a string containing your personal access token
 #'@examples
 #'token <- authorize("key", "secret")
 #'delete_from_wantlist("username", 1, token)
