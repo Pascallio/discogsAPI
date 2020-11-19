@@ -33,7 +33,7 @@ For public use (e.g. an RShiny app), register your application at https://www.di
 # Get the number for sale for release id '1'
 my_key <- "abcde1234"
 my_secret <- "secret9876"
-token <- authorize(my_key, my_secret)
+my_token <- authorize(my_key, my_secret)
 release <- get_release(1, my_token)
 print(release$num_for_sale)
 ```
